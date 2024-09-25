@@ -1,0 +1,14 @@
+node {
+   stage('git scm') {
+       git branch: 'main', url: 'https://github.com/Kavanaraj-sira/maven-project.git'
+}
+stage('build') {
+    bat 'mvn install'
+}
+stage('test') {
+    echo "this is test stage"
+}
+stage('deploy') {
+    echo "this is deploy stage"
+}
+}
